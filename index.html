@@ -1,1 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RE/MAX DOCTA - Inteligencia Comercial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        :root {
+            --remax-red: #E11B22;
+            --remax-blue: #003DA5;
+        }
+        body {
+            background-color: #f8fafc;
+            font-family: 'Inter', sans-serif;
+            color: #1e293b;
+        }
+        .remax-gradient {
+            background: linear-gradient(135deg, #003DA5 0%, #002157 100%);
+        }
+        .card-shadow {
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+        }
+        .filter-btn.active {
+            background-color: var(--remax-red);
+            color: white;
+            border-color: var(--remax-red);
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="pb-20">
 
+    <!-- Header -->
+    <header class="remax-gradient text-white py-6 px-4 mb-8 shadow-2xl">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-6">
+                <!-- Logo: si subes logo.png al repo la imagen cargará localmente -->
+                <div class="flex items-center">
+                    <img src="logo.png" 
+                         alt="RE/MAX Docta Logo" 
+                         class="h-16 md:h-20 w-auto object-contain block"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <!-- Fallback en caso de error de carga -->
+                    <span class="hidden font-black text-2xl tracking-tighter">RE/MAX <span class="font-light">Docta</span></span>
+                </div>
+                
+                <div class="h-12 w-px bg-white/20 hidden md:block"></div>
+                
+                <div>
+                    <h1 class="text-xl md:text-3xl font-black tracking-tighter uppercase italic">Inteligencia Comercial</h1>
+                    <p class="text-blue-200 text-xs md:text-sm font-medium">Panel de Pedidos • Actualizado: 13 de Abril, 2026</p>
+                </div>
+            </div>
+            
+            <div class="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20 text-center md:text-right min-w-[200px]">
+                <p class="text-[10px] text-blue-100 uppercase font-black tracking-widest mb-1">Agencia Córdoba</p>
+                <p class="text-xl font-bold">RE/MAX DOCTA</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4">
+        
+        <!-- SECCIÓN DE CIERRES CALIENTES -->
+        <section class="mb-12">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="bg-red-600 h-8 w-1.5 rounded-full"></div>
+                <h2 class="text-2xl font-black text-slate-800 uppercase tracking-tight">Oportunidades de Cierre Inmediato</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Top 1 -->
+                <div class="bg-white p-6 rounded-3xl border-t-4 border-red-600 shadow-lg relative overflow-hidden group">
+                    <div class="absolute -right-4 -top-4 w-24 h-24 bg-red-50 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <span class="text-red-600 font-black text-4xl opacity-20">01</span>
+                    </div>
+                    <span class="inline-block bg-red-100 text-red-700 text-[10px] font-black px-3 py-1 rounded-full mb-4 uppercase">Reserva Caída</span>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2 leading-tight">Casa 3D + Pileta (Sierras Chicas)</h3>
+                    <p class="text-sm text-slate-600 mb-6 italic">"Para comprar ya. Cliente con dinero disponible."</p>
+                    <div class="flex justify-between items-center bg-slate-50 p-3 rounded-2xl">
+                        <span class="text-xl font-black text-slate-900">u$s 130.000</span>
+                        <a href="https://wa.me/5493513462754" class="bg-red-600 text-white px-4 py-2 rounded-xl text-xs font-bold hover:bg-red-700 transition">Contactar</a>
+                    </div>
+                </div>
+
+                <!-- Top 2 -->
+                <div class="bg-white p-6 rounded-3xl border-t-4 border-blue-600 shadow-lg relative overflow-hidden group">
+                    <div class="absolute -right-4 -top-4 w-24 h-24 bg-blue-50 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <span class="text-blue-600 font-black text-4xl opacity-20">02</span>
+                    </div>
+                    <span class="inline-block bg-blue-100 text-blue-700 text-[10px] font-black px-3 py-1 rounded-full mb-4 uppercase">Plata en Mano</span>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2 leading-tight">Inversión 1D (Gral Paz / Cofico)</h3>
+                    <p class="text-sm text-slate-600 mb-6 italic">"Cliente filtrado, listo para firmar esta semana."</p>
+                    <div class="flex justify-between items-center bg-slate-50 p-3 rounded-2xl">
+                        <span class="text-xl font-black text-slate-900">u$s 52.000</span>
+                        <span class="text-[10px] font-bold text-slate-400">Daniela Asesora</span>
+                    </div>
+                </div>
+
+                <!-- Top 3 -->
+                <div class="bg-white p-6 rounded-3xl border-t-4 border-emerald-600 shadow-lg relative overflow-hidden group">
+                    <div class="absolute -right-4 -top-4 w-24 h-24 bg-emerald-50 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <span class="text-emerald-600 font-black text-4xl opacity-20">03</span>
+                    </div>
+                    <span class="inline-block bg-emerald-100 text-emerald-700 text-[10px] font-black px-3 py-1 rounded-full mb-4 uppercase">Contado Premium</span>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2 leading-tight">Depto 2D Alta Gama (Zona Norte)</h3>
+                    <p class="text-sm text-slate-600 mb-6 italic">"Piso 7+, cochera, calidad constructiva Opera."</p>
+                    <div class="flex justify-between items-center bg-slate-50 p-3 rounded-2xl">
+                        <span class="text-xl font-black text-slate-900">u$s 180.000</span>
+                        <span class="text-[10px] font-bold text-slate-400">Martin Trejo</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BUSCADOR Y FILTROS -->
+        <section class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 mb-10">
+            <div class="flex flex-col lg:flex-row gap-6 items-center">
+                <div class="w-full lg:flex-1 relative">
+                    <i class="fas fa-search absolute left-5 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                    <input type="text" id="searchInput" 
+                        placeholder="Buscar por barrio, agente, monto o prioridad..." 
+                        class="w-full pl-14 pr-6 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:bg-white outline-none transition-all font-medium"
+                        onkeyup="filterCards()">
+                </div>
+                <div class="w-full lg:w-auto flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+                    <button onclick="filterType('todos', event)" class="filter-btn active px-6 py-3 rounded-2xl text-sm font-black border border-slate-200 transition-all whitespace-nowrap">TODOS</button>
+                    <button onclick="filterType('Depto', event)" class="filter-btn bg-white text-slate-600 px-6 py-3 rounded-2xl text-sm font-black border border-slate-200 hover:bg-slate-50 transition-all whitespace-nowrap">DEPTOS</button>
+                    <button onclick="filterType('Casa', event)" class="filter-btn bg-white text-slate-600 px-6 py-3 rounded-2xl text-sm font-black border border-slate-200 hover:bg-slate-50 transition-all whitespace-nowrap">CASAS</button>
+                    <button onclick="filterType('Lote', event)" class="filter-btn bg-white text-slate-600 px-6 py-3 rounded-2xl text-sm font-black border border-slate-200 hover:bg-slate-50 transition-all whitespace-nowrap">LOTES</button>
+                    <button onclick="filterType('Comercial', event)" class="filter-btn bg-white text-slate-600 px-6 py-3 rounded-2xl text-sm font-black border border-slate-200 hover:bg-slate-50 transition-all whitespace-nowrap">COMERCIAL</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- GRID DE PEDIDOS -->
+        <div id="requestsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- Renderizado dinámico JS -->
+        </div>
+
+        <div id="noResults" class="hidden text-center py-20">
+            <div class="bg-slate-100 inline-block p-10 rounded-full mb-4">
+                <i class="fas fa-search-minus text-4xl text-slate-300"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-800 uppercase">Sin resultados</h3>
+            <p class="text-slate-500">Prueba con otros términos de búsqueda.</p>
+        </div>
+    </main>
+
+    <script>
+        // Datos extraídos del informe DOCX
+        const requests = [
+            // (misma lista que tenías; la mantuve idéntica)
+            { cat: "Depto", zona: "Alta Cba / Cofico", desc: "1 dorm, max 10 años, pileta. Firma próxima semana.", sol: "+54 9 351 873-3771", fecha: "01/04", prio: "⭐⭐⭐ EFECTIVO", quote: "Hasta u$s 62.000", raw: "efectivo sesenta y dos mil" },
+            { cat: "Depto", zona: "Gral Paz / Centro", desc: "Buen estado, acepta permuta vehículo nuevo + efectivo.", sol: "+54 9 351 819-2805", fecha: "01/04", prio: "���⭐ PERMUTA", quote: "Hasta USD 75.000", raw: "permuta vehículo" },
+            { cat: "Depto 1D", zona: "Milenica / Villasol", desc: "Complejo cerrado, 1 dorm. Busca Lendar.", sol: "+54 9 351 811-6415", fecha: "08/04", prio: "⭐⭐ LENDAR", quote: "Hasta USD 120.000", raw: "milenica villasol harmonie" },
+            { cat: "Depto 1D", zona: "Gral Paz / Alberdi", desc: "Inversión, escritura, gas natural. PLATA EN MANO.", sol: "Daniela asesora", fecha: "10/04", prio: "⭐⭐⭐ EFECTIVO", quote: "Hasta USD 52.000", raw: "plata en mano filtrado" },
+            { cat: "Depto 1D", zona: "Cofico / Alta Cba", desc: "Para comprar ya!! Bien ubicado, poca antigüedad.", sol: "+54 9 351 606-5358", fecha: "08/04", prio: "⭐ URGENTE", quote: "USD 50.000", raw: "comprar ya" },
+            { cat: "Depto 2D", zona: "Gral Paz / Z. Norte", desc: "Calidad constructiva, cochera, piso 7+, orient. SUR.", sol: "Martin Trejo", fecha: "11/04", prio: "⭐⭐⭐ CONTADO", quote: "Hasta USD 180.000", raw: "piso 7 superior" },
+            { cat: "Depto 3D", zona: "Centro / Nueva Cba", desc: "Edificio con SEGURIDAD. Cierre contado.", sol: "Mariana Roschietti", fecha: "08/04", prio: "⭐⭐⭐ CONTADO", quote: "USD 190.000", raw: "seguridad 190" },
+            { cat: "Casa", zona: "V. Belgrano / Urca", desc: "Cocina con isla, galería, cochera, escritura.", sol: "Ana Ruffa", fecha: "06/04", prio: "⭐⭐ CALIFICADO", quote: "USD 160.000", raw: "ruffa cocina isla" },
+            { cat: "Casa", zona: "Río Ceballos / Unquillo", desc: "3 dorm min, patio, pileta. RESERVA CAÍDA.", sol: "+54 9 351 346-2754", fecha: "08/04", prio: "⭐⭐⭐ URGENTE", quote: "USD 130.000", raw: "reserva caída ya" },
+            { cat: "Casa 2D", zona: "Alto Alberdi / Obrero", desc: "DESOCUPADA EXCLUYENTE. Mudanza inmediata.", sol: "Axel Gadau", fecha: "11/04", prio: "⭐⭐⭐ URGENTE", quote: "Hasta USD 60.000", raw: "desocupada mudanza" },
+            { cat: "Casa", zona: "Manantiales", desc: "3 dorm, suite, radiadores, cochera doble.", sol: "Florencia Montoya", fecha: "02/04", prio: "⭐⭐ CALIFICADO", quote: "USD 200.000", raw: "radiadores manantiales" },
+            { cat: "Casa", zona: "Escobar / B. Palermo", desc: "3 dormitorios, apto crédito NACIÓN.", sol: "Lorena Ariza", fecha: "07/04", prio: "⭐⭐ CRÉDITO", quote: "USD 72.000", raw: "crédito nación" },
+            { cat: "Casa Reciclaje", zona: "Alto Verde / Urca", desc: "A RECICLAR para armar 2 departamentos.", sol: "C. Manzano", fecha: "08/04", prio: "⭐ INVERSOR", quote: "USD 100.000", raw: "reciclar inversión" },
+            { cat: "Lote", zona: "Villa Warcalde", desc: "500-600 m2, PLANO requisito excluyente.", sol: "+54 9 351 258-1359", fecha: "07/04", prio: "⭐⭐ CALIFICADO", quote: "Hasta USD 180.000", raw: "warcalde plano" },
+            { cat: "Terreno", zona: "Icho Cruz / San Antonio", desc: "Entorno natural, cerca del río. Hasta 1000 m2.", sol: "Guido Docta", fecha: "06/04", prio: "⭐ ESTÁNDAR", quote: "USD 20.000", raw: "icho cruz rio" },
+            { cat: "Galpón", zona: "Zona Norte", desc: "600 a 1000 m2. Oficina a la calle. COMPRA.", sol: "G. Santa Fe", fecha: "13/04", prio: "⭐⭐⭐ SIN TECHO", quote: "SIN PRESUPUESTO", raw: "galpón norte" },
+            { cat: "Comercial", zona: "Recta / Cerro", desc: "Local con baño y cocina. Consultorios.", sol: "Vanesa", fecha: "01/04", prio: "⭐⭐ CALIFICADO", quote: "USD 90.000", raw: "consultorios local" },
+            { cat: "Alquiler Casa", zona: "Zona Sur", desc: "3 dorm, cerca Ciudad Universitaria.", sol: "+54 9 351 873-9662", fecha: "08/04", prio: "⭐ URGENTE", quote: "$1.500.000 /mes", raw: "universidad alquiler" }
+        ];
+
+        function renderCards(data) {
+            const grid = document.getElementById('requestsGrid');
+            const noRes = document.getElementById('noResults');
+            grid.innerHTML = '';
+
+            if (data.length === 0) {
+                noRes.classList.remove('hidden');
+                return;
+            }
+            noRes.classList.add('hidden');
+
+            data.forEach(item => {
+                let badgeClass = "bg-slate-100 text-slate-500 border-slate-200";
+                if(item.prio.includes("⭐⭐⭐")) badgeClass = "bg-red-50 text-red-600 border-red-100";
+                else if(item.prio.includes("⭐⭐")) badgeClass = "bg-blue-50 text-blue-600 border-blue-100";
+
+                const card = document.createElement('div');
+                card.className = "bg-white rounded-[2rem] p-5 border border-slate-100 flex flex-col hover:shadow-xl hover:border-blue-200 transition-all duration-300 group cursor-default";
+
+                // Construir enlace de WhatsApp de forma segura
+                const phone = (item.sol || '').replace(/[^0-9]/g, '');
+                const hasPhone = phone.length >= 8;
+                const waHref = hasPhone ? `https://wa.me/${phone}` : '#';
+                const waClass = hasPhone
+                  ? 'w-8 h-8 rounded-full bg-green-50 flex items-center justify-center text-green-500 hover:bg-green-500 hover:text-white transition-all'
+                  : 'w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-300 cursor-not-allowed';
+                const waTarget = hasPhone ? 'target="_blank" rel="noopener noreferrer"' : 'aria-disabled="true"';
+
+                card.innerHTML = `
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="text-[9px] font-black uppercase tracking-wider px-3 py-1.5 rounded-full border ${badgeClass}">${item.prio}</span>
+                        <span class="text-[10px] text-slate-400 font-bold">${item.fecha}</span>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="text-[10px] font-black text-red-600 uppercase tracking-widest mb-1">${item.cat}</h4>
+                        <h3 class="text-lg font-bold text-slate-800 leading-tight group-hover:text-blue-700 transition-colors">${item.zona}</h3>
+                    </div>
+                    <p class="text-xs text-slate-500 leading-relaxed mb-6 flex-1">${item.desc}</p>
+                    
+                    <div class="bg-slate-50 border border-slate-100 p-4 rounded-2xl mb-6">
+                        <p class="text-xs font-black text-slate-900">${item.quote}</p>
+                    </div>
+                    
+                    <div class="flex items-center justify-between pt-4 border-t border-slate-50">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-black text-[10px] border border-blue-200">
+                                RX
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-[9px] text-slate-400 font-bold uppercase">Solicitante</span>
+                                <span class="text-[11px] font-bold text-slate-700">${item.sol}</span>
+                            </div>
+                        </div>
+                        <a href="${waHref}" ${waTarget} class="${waClass}">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterCards() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const filtered = requests.filter(r => 
+                r.zona.toLowerCase().includes(query) || 
+                r.desc.toLowerCase().includes(query) || 
+                r.sol.toLowerCase().includes(query) ||
+                r.raw.toLowerCase().includes(query) ||
+                r.cat.toLowerCase().includes(query)
+            );
+            renderCards(filtered);
+        }
+
+        function filterType(type, ev) {
+            if (ev && ev.currentTarget) {
+                // nothing
+            }
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            // marcar el botón que disparó el evento (si existe)
+            if (ev && ev.currentTarget) {
+                ev.currentTarget.classList.add('active');
+            } else if (ev && ev.target) {
+                ev.target.classList.add('active');
+            } else {
+                // fallback: marcar por texto
+                const btn = Array.from(document.querySelectorAll('.filter-btn')).find(b => b.textContent.trim().toUpperCase() === (type || '').toUpperCase() || (type === 'todos' && b.textContent.trim().toUpperCase()==='TODOS'));
+                if (btn) btn.classList.add('active');
+            }
+            
+            if(type === 'todos') {
+                renderCards(requests);
+            } else {
+                const filtered = requests.filter(r => r.cat.toLowerCase().includes(type.toLowerCase()));
+                renderCards(filtered);
+            }
+        }
+
+        // Inicializar
+        window.onload = () => renderCards(requests);
+    </script>
+</body>
+</html>
