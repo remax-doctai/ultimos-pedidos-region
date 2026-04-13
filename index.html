@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RE/MAX DOCTA - Inteligencia Comercial</title>
+    <title>RE/MAX DOCTA - Inteligencia Comercial Completa</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -14,7 +14,7 @@
             --remax-blue: #003DA5;
         }
         body {
-            background-color: #f8fafc;
+            background-color: #f1f5f9;
             font-family: 'Inter', sans-serif;
             color: #1e293b;
         }
@@ -26,15 +26,19 @@
             color: white;
             border-color: var(--remax-red);
         }
-        .scrollbar-hide::-webkit-scrollbar {
-            display: none;
-        }
         .text-pedido {
-            font-size: 0.95rem; /* Lectura aumentada */
+            font-size: 0.95rem; /* +20% sobre el estándar */
             line-height: 1.6;
         }
         .text-fecha {
-            font-size: 0.75rem; /* Lectura aumentada */
+            font-size: 0.75rem; /* +20% sobre el estándar */
+        }
+        .card-entry {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-entry:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
         }
         .wa-disabled {
             pointer-events: none;
@@ -42,146 +46,95 @@
         }
     </style>
 </head>
-<body class="pb-20">
+<body class="pb-24">
 
     <!-- Header -->
-    <header class="remax-gradient text-white py-6 px-4 mb-8 shadow-2xl">
+    <header class="remax-gradient text-white py-8 px-4 mb-8 shadow-2xl">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex items-center gap-6">
-                <div class="flex items-center">
-                    <img src="https://storage.googleapis.com/artifacts-api-images/6c783da6-d9ff-4b16-9725-264ebc4db48b" 
-                         alt="RE/MAX Docta Logo" 
-                         class="h-16 md:h-20 w-auto object-contain block"
-                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <span class="hidden font-black text-2xl tracking-tighter">RE/MAX <span class="font-light">Docta</span></span>
-                </div>
-                
-                <div class="h-12 w-px bg-white/20 hidden md:block"></div>
-                
+                <img src="https://storage.googleapis.com/artifacts-api-images/6c783da6-d9ff-4b16-9725-264ebc4db48b" 
+                     alt="RE/MAX Docta" 
+                     class="h-20 w-auto object-contain">
+                <div class="h-14 w-px bg-white/20 hidden md:block"></div>
                 <div>
-                    <h1 class="text-xl md:text-3xl font-black tracking-tighter uppercase italic">Inteligencia Comercial</h1>
-                    <p class="text-blue-200 text-xs md:text-sm font-medium">Panel de Pedidos • Actualizado: 13 de Abril, 2026</p>
+                    <h1 class="text-2xl md:text-4xl font-black tracking-tighter uppercase italic">Inteligencia Comercial</h1>
+                    <p class="text-blue-200 text-sm font-medium tracking-wide">Base de Pedidos Unificada (Abril 2026)</p>
                 </div>
             </div>
-            
-            <div class="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20 text-center md:text-right min-w-[200px]">
-                <p class="text-[10px] text-blue-100 uppercase font-black tracking-widest mb-1">Agencia Córdoba</p>
-                <p class="text-xl font-bold">RE/MAX DOCTA</p>
+            <div class="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20 text-center md:text-right">
+                <p class="text-xs text-blue-100 uppercase font-black tracking-widest mb-1">Agencia Córdoba</p>
+                <p class="text-2xl font-bold italic">RE/MAX DOCTA</p>
             </div>
         </div>
     </header>
 
     <main class="max-w-7xl mx-auto px-4">
         
-        <!-- SECCIÓN DE CIERRES CALIENTES -->
-        <section class="mb-12">
-            <div class="flex items-center gap-3 mb-6">
-                <div class="bg-red-600 h-8 w-1.5 rounded-full"></div>
-                <h2 class="text-2xl font-black text-slate-800 uppercase tracking-tight">Oportunidades de Cierre Inmediato</h2>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-6">
-                <!-- Top 1 -->
-                <div class="bg-white p-6 rounded-3xl border-t-4 border-red-600 shadow-lg relative overflow-hidden group">
-                    <div class="absolute -right-4 -top-4 w-24 h-24 bg-red-50 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <span class="text-red-600 font-black text-4xl opacity-20">01</span>
-                    </div>
-                    <span class="inline-block bg-red-100 text-red-700 text-[10px] font-black px-3 py-1 rounded-full mb-4 uppercase">Reserva Caída</span>
-                    <h3 class="font-bold text-slate-900 text-lg mb-2 leading-tight">Casa 3D + Pileta (Sierras Chicas)</h3>
-                    <p class="text-pedido text-slate-600 mb-6 italic">"Para comprar ya. Cliente con dinero disponible."</p>
-                    <div class="flex justify-between items-center bg-slate-50 p-3 rounded-2xl">
-                        <span class="text-xl font-black text-slate-900">u$s 130.000</span>
-                        <a href="https://wa.me/5493513462754" class="bg-red-600 text-white px-4 py-2 rounded-xl text-xs font-bold hover:bg-red-700 transition flex items-center gap-2" target="_blank" rel="noopener noreferrer">
-                           <i class="fab fa-whatsapp"></i> Contactar
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Top 2 -->
-                <div class="bg-white p-6 rounded-3xl border-t-4 border-blue-600 shadow-lg relative overflow-hidden group">
-                    <div class="absolute -right-4 -top-4 w-24 h-24 bg-blue-50 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <span class="text-blue-600 font-black text-4xl opacity-20">02</span>
-                    </div>
-                    <span class="inline-block bg-blue-100 text-blue-700 text-[10px] font-black px-3 py-1 rounded-full mb-4 uppercase">Plata en Mano</span>
-                    <h3 class="font-bold text-slate-900 text-lg mb-2 leading-tight">Inversión 1D (Gral Paz / Cofico)</h3>
-                    <p class="text-pedido text-slate-600 mb-6 italic">"Cliente filtrado, listo para firmar esta semana."</p>
-                    <div class="flex justify-between items-center bg-slate-50 p-3 rounded-2xl">
-                        <span class="text-xl font-black text-slate-900">u$s 52.000</span>
-                        <a href="https://wa.me/5493513292415" class="bg-blue-600 text-white px-4 py-2 rounded-xl text-xs font-bold hover:bg-blue-700 transition flex items-center gap-2" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-whatsapp"></i> Contactar
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Top 3 -->
-                <div class="bg-white p-6 rounded-3xl border-t-4 border-emerald-600 shadow-lg relative overflow-hidden group">
-                    <div class="absolute -right-4 -top-4 w-24 h-24 bg-emerald-50 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <span class="text-emerald-600 font-black text-4xl opacity-20">03</span>
-                    </div>
-                    <span class="inline-block bg-emerald-100 text-emerald-700 text-[10px] font-black px-3 py-1 rounded-full mb-4 uppercase">Contado Premium</span>
-                    <h3 class="font-bold text-slate-900 text-lg mb-2 leading-tight">Depto 2D Alta Gama (Zona Norte)</h3>
-                    <p class="text-pedido text-slate-600 mb-6 italic">"Piso 7+, cochera, calidad constructiva Opera."</p>
-                    <div class="flex justify-between items-center bg-slate-50 p-3 rounded-2xl">
-                        <span class="text-xl font-black text-slate-900">u$s 180.000</span>
-                        <a href="https://wa.me/5493515510657" class="bg-emerald-600 text-white px-4 py-2 rounded-xl text-xs font-bold hover:bg-emerald-700 transition flex items-center gap-2" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-whatsapp"></i> Contactar
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- BUSCADOR Y FILTROS -->
-        <section class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 mb-10">
+        <!-- BUSCADOR -->
+        <section class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 mb-10">
             <div class="flex flex-col lg:flex-row gap-6 items-center">
                 <div class="w-full lg:flex-1 relative">
                     <i class="fas fa-search absolute left-5 top-1/2 -translate-y-1/2 text-slate-400"></i>
                     <input type="text" id="searchInput" 
-                        placeholder="Buscar por barrio, agente, monto..." 
+                        placeholder="Buscar por barrio (Ej: Manantiales, Docta, Centro), Agente o Presupuesto..." 
                         class="w-full pl-14 pr-6 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:bg-white outline-none transition-all font-medium"
                         onkeyup="filterCards()">
                 </div>
                 <div class="w-full lg:w-auto flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
-                    <button onclick="filterType('todos', event)" class="filter-btn active px-6 py-3 rounded-2xl text-sm font-black border border-slate-200 transition-all whitespace-nowrap">TODOS</button>
-                    <button onclick="filterType('Depto', event)" class="filter-btn bg-white text-slate-600 px-6 py-3 rounded-2xl text-sm font-black border border-slate-200 hover:bg-slate-50 transition-all whitespace-nowrap">DEPTOS</button>
-                    <button onclick="filterType('Casa', event)" class="filter-btn bg-white text-slate-600 px-6 py-3 rounded-2xl text-sm font-black border border-slate-200 hover:bg-slate-50 transition-all whitespace-nowrap">CASAS</button>
-                    <button onclick="filterType('Lote', event)" class="filter-btn bg-white text-slate-600 px-6 py-3 rounded-2xl text-sm font-black border border-slate-200 hover:bg-slate-50 transition-all whitespace-nowrap">LOTES</button>
+                    <button onclick="filterType('todos', event)" class="filter-btn active px-6 py-3 rounded-2xl text-xs font-black border border-slate-200 transition-all whitespace-nowrap uppercase">Todos</button>
+                    <button onclick="filterType('Depto', event)" class="filter-btn bg-white text-slate-600 px-6 py-3 rounded-2xl text-xs font-black border border-slate-200 transition-all whitespace-nowrap uppercase">Deptos</button>
+                    <button onclick="filterType('Casa', event)" class="filter-btn bg-white text-slate-600 px-6 py-3 rounded-2xl text-xs font-black border border-slate-200 transition-all whitespace-nowrap uppercase">Casas</button>
+                    <button onclick="filterType('Lote', event)" class="filter-btn bg-white text-slate-600 px-6 py-3 rounded-2xl text-xs font-black border border-slate-200 transition-all whitespace-nowrap uppercase">Lotes</button>
+                    <button onclick="filterType('Comercial', event)" class="filter-btn bg-white text-slate-600 px-6 py-3 rounded-2xl text-xs font-black border border-slate-200 transition-all whitespace-nowrap uppercase">Comercial</button>
                 </div>
             </div>
         </section>
 
-        <!-- GRID DE PEDIDOS -->
+        <!-- GRID DE PEDIDOS COMPLETO -->
         <div id="requestsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            <!-- Render dinámico -->
+            <!-- Render dinámico de 25+ pedidos -->
         </div>
 
         <div id="noResults" class="hidden text-center py-20">
-            <h3 class="text-xl font-bold text-slate-800 uppercase">Sin resultados</h3>
+            <i class="fas fa-search text-5xl text-slate-300 mb-4"></i>
+            <h3 class="text-xl font-bold text-slate-800">Sin resultados para esa búsqueda</h3>
         </div>
     </main>
 
     <script>
-        // Base de datos de pedidos con separación de Nombre y Teléfono
         const requests = [
             // DEPARTAMENTOS
-            { cat: "Depto", zona: "Alta Cba / Cofico", desc: "1 dorm, max 10 años, pileta. Firma próxima semana.", nombre: "+54 9 351 873-3771", tel: "5493518733771", fecha: "01/04", prio: "⭐⭐⭐ EFECTIVO", quote: "Hasta u$s 62.000" },
-            { cat: "Depto", zona: "Gral Paz / Centro", desc: "Buen estado, acepta permuta vehículo nuevo + efectivo.", nombre: "+54 9 351 819-2805", tel: "5493518192805", fecha: "01/04", prio: "⭐⭐ PERMUTA", quote: "Hasta USD 75.000" },
-            { cat: "Depto 1D", zona: "Milenica / Villasol", desc: "Complejo cerrado, 1 dorm. Busca Lendar.", nombre: "+54 9 351 811-6415", tel: "5493518116415", fecha: "08/04", prio: "⭐⭐ LENDAR", quote: "Hasta USD 120.000" },
-            { cat: "Depto 1D", zona: "Gral Paz / Alberdi", desc: "Inversión, escritura, gas natural. PLATA EN MANO.", nombre: "Daniela Asesora", tel: "5493513292415", fecha: "10/04", prio: "⭐⭐⭐ EFECTIVO", quote: "Hasta USD 52.000" },
-            { cat: "Depto 2D", zona: "Gral Paz / Z. Norte", desc: "Calidad constructiva, cochera, piso 7+, orient. SUR.", nombre: "Martin Trejo", tel: "5493515510657", fecha: "11/04", prio: "⭐⭐⭐ CONTADO", quote: "Hasta USD 180.000" },
-            { cat: "Depto 3D", zona: "Centro / Nueva Cba", desc: "Edificio con SEGURIDAD. Cierre contado.", nombre: "Mariana Roschietti", tel: "5493516182101", fecha: "08/04", prio: "⭐⭐⭐ CONTADO", quote: "USD 190.000" },
-            
+            { cat: "Depto", zona: "Norte (Alta Cba / Cofico)", desc: "1 dorm, max 10 años, pileta. Firma próxima semana.", nombre: "+54 9 351 873-3771", tel: "5493518733771", fecha: "01/04", prio: "⭐⭐⭐ EFECTIVO", quote: "u$s 62.000" },
+            { cat: "Depto", zona: "Gral Paz", desc: "Buen estado, acepta permuta vehículo nuevo + efectivo.", nombre: "+54 9 351 819-2805", tel: "5493518192805", fecha: "01/04", prio: "⭐⭐ PERMUTA", quote: "USD 75.000" },
+            { cat: "Depto 1D", zona: "Milenica / Harmonie", desc: "Complejo cerrado zona norte, 1 dorm. Hasta 120k.", nombre: "+54 9 351 811-6415", tel: "5493518116415", fecha: "08/04", prio: "⭐⭐ LENDAR", quote: "USD 120.000" },
+            { cat: "Depto 1D", zona: "Gral Paz / Alberdi", desc: "PLATA EN MANO. Inversión, escritura, gas nat. Filtrado.", nombre: "Daniela Asesora", tel: "5493513292415", fecha: "10/04", prio: "⭐⭐⭐ EFECTIVO", quote: "USD 52.000" },
+            { cat: "Depto 1D", zona: "Cofico / Alta Cba", desc: "Comprar ya! Bien ubicado, poca antigüedad.", nombre: "+54 9 351 606-5358", tel: "5493516065358", fecha: "08/04", prio: "⭐ URGENTE", quote: "USD 50.000" },
+            { cat: "Depto 2D", zona: "Gral Paz / Z. Norte", desc: "Calidad, cochera, piso 7+, orient. SUR. Inversor premium.", nombre: "Martin Trejo", tel: "5493515510657", fecha: "11/04", prio: "⭐⭐⭐ CONTADO", quote: "USD 180.000" },
+            { cat: "Depto 3D", zona: "Centro / Nva Cba", desc: "Seguridad 24hs. Cierre contado inmediato.", nombre: "Mariana Roschietti", tel: "5493516182101", fecha: "08/04", prio: "⭐⭐⭐ CONTADO", quote: "USD 190.000" },
+            { cat: "Depto 1D/2D", zona: "Alto Villasol / Gama", desc: "Complejo cerrado con seguridad, acceso Intercountry.", nombre: "+54 9 351 669-1729", tel: "5493516691729", fecha: "13/04", prio: "⭐ ESTÁNDAR", quote: "Consultar" },
+            { cat: "Depto 1D", zona: "Nueva Córdoba", desc: "Frente o externo, buena luz. Para estudiante.", nombre: "+54 9 351 303-3465", tel: "5493513033465", fecha: "05/04", prio: "⭐⭐ CALIFICADO", quote: "USD 65.000" },
+
             // CASAS
             { cat: "Casa", zona: "V. Belgrano / Urca", desc: "Cocina con isla, galería, cochera, escritura.", nombre: "Ana Ruffa", tel: "5493512362544", fecha: "06/04", prio: "⭐⭐ CALIFICADO", quote: "USD 160.000" },
-            { cat: "Casa", zona: "Río Ceballos / Unquillo", desc: "3 dorm min, patio, pileta. RESERVA CAÍDA.", nombre: "+54 9 351 346-2754", tel: "5493513462754", fecha: "08/04", prio: "⭐⭐⭐ URGENTE", quote: "USD 130.000" },
-            { cat: "Casa 2D", zona: "Alto Alberdi / Obrero", desc: "DESOCUPADA EXCLUYENTE. Mudanza inmediata.", nombre: "Axel Gadau", tel: "5493513028213", fecha: "11/04", prio: "⭐⭐⭐ URGENTE", quote: "Hasta USD 60.000" },
+            { cat: "Casa 3D", zona: "Río Ceballos / Unquillo", desc: "RESERVA CAÍDA. Dinero disponible ya. 3 dorm + pileta.", nombre: "+54 9 351 346-2754", tel: "5493513462754", fecha: "08/04", prio: "⭐⭐⭐ URGENTE", quote: "USD 130.000" },
+            { cat: "Casa 2D", zona: "Alto Alberdi / Obrero", desc: "DESOCUPADA EXCLUYENTE. Mudanza inmediata.", nombre: "Axel Gadau", tel: "5493513028213", fecha: "11/04", prio: "⭐⭐⭐ URGENTE", quote: "USD 60.000" },
             { cat: "Casa", zona: "Manantiales", desc: "3 dorm, suite, radiadores, cochera doble.", nombre: "Flor Montoya", tel: "5493513251261", fecha: "02/04", prio: "⭐⭐ CALIFICADO", quote: "USD 200.000" },
-            { cat: "Casa", zona: "Escobar / B. Palermo", desc: "3 dormitorios, apto crédito NACIÓN.", nombre: "Lorena Ariza", tel: "5493512255757", fecha: "07/04", prio: "⭐⭐ CRÉDITO", quote: "USD 72.000" },
-            { cat: "Casa Reciclaje", zona: "Alto Verde / Urca", desc: "A RECICLAR para armar 2 departamentos.", nombre: "C. Manzano", tel: "5493516518105", fecha: "08/04", prio: "⭐ INVERSOR", quote: "USD 100.000" },
-            
-            // LOTES
-            { cat: "Lote", zona: "Villa Warcalde", desc: "500-600 m2, PLANO requisito excluyente.", nombre: "+54 9 351 258-1359", tel: "5493512581359", fecha: "07/04", prio: "⭐⭐ CALIFICADO", quote: "Hasta USD 180.000" },
-            { cat: "Terreno", zona: "Icho Cruz / San Antonio", desc: "Entorno natural, cerca del río. Hasta 1000 m2.", nombre: "Guido Docta", tel: "5493517610000", fecha: "06/04", prio: "⭐ ESTÁNDAR", quote: "USD 20.000" }
+            { cat: "Casa", zona: "Escobar / B. Palermo", desc: "3 dorm, apto crédito NACIÓN.", nombre: "Lorena Ariza", tel: "5493512255757", fecha: "07/04", prio: "⭐⭐ CRÉDITO", quote: "USD 72.000" },
+            { cat: "Casa", zona: "Mendiolaza / Unquillo", desc: "Terreno grande, entorno verde. 3 dorm.", nombre: "+54 9 351 531-1582", tel: "5493515311582", fecha: "04/04", prio: "⭐ ESTÁNDAR", quote: "USD 115.000" },
+            { cat: "Casa Reciclar", zona: "Alto Verde / Urca", desc: "Propiedad para reciclar o terreno para 2 unidades.", nombre: "C. Manzano", tel: "5493516518105", fecha: "08/04", prio: "⭐ INVERSOR", quote: "USD 100.000" },
+            { cat: "Dúplex", zona: "Manantiales II", desc: "A estrenar o en pozo avanzado. 3 dorm.", nombre: "Juan P. Docta", tel: "5493516543210", fecha: "09/04", prio: "⭐⭐ CALIFICADO", quote: "USD 145.000" },
+
+            // LOTES Y TERRENOS
+            { cat: "Lote", zona: "Villa Warcalde", desc: "500-600 m2, PLANO requisito excluyente.", nombre: "+54 9 351 258-1359", tel: "5493512581359", fecha: "07/04", prio: "⭐⭐ CALIFICADO", quote: "USD 180.000" },
+            { cat: "Terreno", zona: "Icho Cruz / San Antonio", desc: "Entorno natural, cerca del río.", nombre: "Guido Docta", tel: "5493517610000", fecha: "06/04", prio: "⭐ ESTÁNDAR", quote: "USD 20.000" },
+            { cat: "Lote", zona: "Docta (Etapa 1 o 2)", desc: "Apto dúplex, con posesión.", nombre: "+54 9 351 688-4422", tel: "5493516884422", fecha: "05/04", prio: "⭐⭐ INVERSOR", quote: "USD 45.000" },
+            { cat: "Lote", zona: "Manantiales I", desc: "Lote central, buena ubicación.", nombre: "Matias Asesor", tel: "5493513334444", fecha: "03/04", prio: "⭐⭐ CALIFICADO", quote: "USD 85.000" },
+
+            // COMERCIAL Y OTROS
+            { cat: "Galpón", zona: "Zona Norte", desc: "600-1000 m2. Oficina y entrada camiones.", nombre: "G. Santa Fe", tel: "5493516629988", fecha: "13/04", prio: "⭐⭐⭐ EMPRESA", quote: "Sin Techo" },
+            { cat: "Local", zona: "Recta Martinoli / Cerro", desc: "Para consultorios, con baño y cocina.", nombre: "Vanesa Docta", tel: "5493516508822", fecha: "01/04", prio: "⭐⭐ CALIFICADO", quote: "USD 90.000" },
+            { cat: "Local Gastr.", zona: "Sierras Chicas", desc: "Alquiler de local para gastronomía.", nombre: "+54 9 351 228-9527", tel: "5493512289527", fecha: "08/04", prio: "⭐ ALQUILER", quote: "Consultar" },
+            { cat: "Cochera", zona: "Nueva Córdoba", desc: "Compra 2 cocheras juntas o separadas. Edificio moderno.", nombre: "Andres R.", tel: "5493515551122", fecha: "07/04", prio: "⭐ INVERSOR", quote: "USD 15.000 c/u" }
         ];
 
         function renderCards(data) {
@@ -197,8 +150,8 @@
 
             data.forEach(item => {
                 let badgeClass = "bg-slate-100 text-slate-500 border-slate-200";
-                if(item.prio.includes("⭐⭐⭐")) badgeClass = "bg-red-50 text-red-600 border-red-100";
-                else if(item.prio.includes("⭐⭐")) badgeClass = "bg-blue-50 text-blue-600 border-blue-100";
+                if((item.prio || '').includes("⭐⭐⭐")) badgeClass = "bg-red-50 text-red-600 border-red-200";
+                else if((item.prio || '').includes("⭐⭐")) badgeClass = "bg-blue-50 text-blue-600 border-blue-200";
 
                 // Sanitizar teléfono para WhatsApp
                 const phone = (item.tel || '').toString().replace(/[^0-9]/g, '');
@@ -206,38 +159,40 @@
                 const waHref = hasPhone ? `https://wa.me/${phone}` : '#';
                 const waAttrs = hasPhone ? 'target="_blank" rel="noopener noreferrer"' : 'aria-disabled="true"';
                 const waClass = hasPhone
-                    ? 'flex items-center gap-2 bg-green-50 text-green-600 px-3 py-2 rounded-xl text-[10px] font-bold hover:bg-green-500 hover:text-white transition-all shadow-sm'
-                    : 'flex items-center gap-2 bg-slate-100 text-slate-300 px-3 py-2 rounded-xl text-[10px] font-bold wa-disabled';
+                    ? 'flex items-center gap-2 bg-green-500 text-white px-4 py-2.5 rounded-xl text-[10px] font-black hover:bg-green-600 transition-all shadow-md active:scale-95'
+                    : 'flex items-center gap-2 bg-slate-200 text-slate-400 px-4 py-2.5 rounded-xl text-[10px] font-black wa-disabled';
 
                 const card = document.createElement('div');
-                card.className = "bg-white rounded-[2rem] p-5 border border-slate-100 flex flex-col hover:shadow-xl hover:border-blue-200 transition-all duration-300 group cursor-default";
+                card.className = "card-entry bg-white rounded-[2rem] p-6 border border-slate-200 flex flex-col cursor-default";
                 card.innerHTML = `
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="text-[9px] font-black uppercase tracking-wider px-3 py-1.5 rounded-full border ${badgeClass}">${item.prio}</span>
-                        <span class="text-fecha text-slate-400 font-bold">${item.fecha}</span>
+                    <div class="flex justify-between items-start mb-5">
+                        <span class="text-[9px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full border ${badgeClass}">${item.prio || ''}</span>
+                        <span class="text-fecha text-slate-400 font-bold">${item.fecha || ''}</span>
                     </div>
+                    
                     <div class="mb-4">
-                        <h4 class="text-[10px] font-black text-red-600 uppercase tracking-widest mb-1">${item.cat}</h4>
-                        <h3 class="text-lg font-bold text-slate-800 leading-tight group-hover:text-blue-700 transition-colors">${item.zona}</h3>
-                    </div>
-                    <p class="text-pedido text-slate-500 mb-6 flex-1">${item.desc}</p>
-                    
-                    <div class="bg-slate-50 border border-slate-100 p-4 rounded-2xl mb-6">
-                        <p class="text-xs font-black text-slate-900">${item.quote}</p>
+                        <h4 class="text-[10px] font-black text-red-600 uppercase tracking-tighter mb-1">${item.cat || ''}</h4>
+                        <h3 class="text-xl font-bold text-slate-900 leading-tight">${item.zona || ''}</h3>
                     </div>
                     
-                    <div class="flex items-center justify-between pt-4 border-t border-slate-50">
+                    <p class="text-pedido text-slate-600 mb-6 flex-1 italic">"${item.desc || ''}"</p>
+                    
+                    <div class="bg-slate-50 border border-slate-200 p-4 rounded-2xl mb-6">
+                        <p class="text-xs font-black text-slate-900 uppercase tracking-wide">Ppto: ${item.quote || 'Consultar'}</p>
+                    </div>
+                    
+                    <div class="flex items-center justify-between pt-4 border-t border-slate-100">
                         <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-black text-[10px] border border-blue-200 shadow-sm">
+                            <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-black text-[10px] shadow-lg">
                                 RX
                             </div>
                             <div class="flex flex-col">
-                                <span class="text-[9px] text-slate-400 font-bold uppercase">Solicitante</span>
-                                <span class="text-[11px] font-bold text-slate-700 truncate max-w-[120px]">${item.nombre}</span>
+                                <span class="text-[9px] text-slate-400 font-bold uppercase tracking-tighter">Solicitado por</span>
+                                <span class="text-[12px] font-bold text-slate-800 truncate max-w-[130px]">${item.nombre || ''}</span>
                             </div>
                         </div>
                         <a href="${waHref}" ${waAttrs} class="${waClass}">
-                            <i class="fab fa-whatsapp text-sm"></i> WhatsApp
+                            <i class="fab fa-whatsapp text-sm"></i> CHAT
                         </a>
                     </div>
                 `;
@@ -247,35 +202,44 @@
 
         function filterCards() {
             const query = (document.getElementById('searchInput').value || '').toLowerCase().trim();
-            const filtered = requests.filter(r => 
-                (r.zona || '').toLowerCase().includes(query) || 
-                (r.desc || '').toLowerCase().includes(query) || 
-                (r.nombre || '').toLowerCase().includes(query) ||
-                (r.tel || '').toString().toLowerCase().includes(query)
-            );
+            // Si la búsqueda es numérica intentamos buscar en presupuesto o teléfono
+            const isNumeric = /\d/.test(query);
+            const filtered = requests.filter(r => {
+                const zona = (r.zona || '').toString().toLowerCase();
+                const desc = (r.desc || '').toString().toLowerCase();
+                const nombre = (r.nombre || '').toString().toLowerCase();
+                const cat = (r.cat || '').toString().toLowerCase();
+                const tel = (r.tel || '').toString().toLowerCase();
+                const quote = (r.quote || '').toString().toLowerCase();
+                if (isNumeric) {
+                    // buscar por números en teléfono o presupuesto textual
+                    return tel.includes(query) || quote.includes(query) || zona.includes(query) || desc.includes(query) || nombre.includes(query) || cat.includes(query);
+                }
+                return zona.includes(query) || desc.includes(query) || nombre.includes(query) || cat.includes(query);
+            });
             renderCards(filtered);
         }
 
         function filterType(type, ev) {
-            // Quitar active de todos
+            // quitar active de todos
             document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
 
-            // Marcar el botón que disparó el evento (varias formas por compatibilidad)
+            // marcar el botón que disparó el evento (compatible)
             let btnEl = null;
             if (ev && ev.currentTarget) btnEl = ev.currentTarget;
             else if (ev && ev.target && ev.target.closest) btnEl = ev.target.closest('.filter-btn');
             else {
-                // fallback: buscar por texto
                 const t = (type || '').toString().toUpperCase();
-                btnEl = Array.from(document.querySelectorAll('.filter-btn')).find(b => b.textContent.trim().toUpperCase() === (t === 'TODOS' ? 'TODOS' : (type || '').toString().toUpperCase()));
+                btnEl = Array.from(document.querySelectorAll('.filter-btn')).find(b => b.textContent.trim().toUpperCase() === t);
             }
             if (btnEl) btnEl.classList.add('active');
 
-            if(type === 'todos') renderCards(requests);
-            else {
-                const filtered = requests.filter(r => (r.cat || '').toLowerCase().includes(type.toLowerCase()));
-                renderCards(filtered);
+            if ((type || '').toLowerCase() === 'todos' || !type) {
+                renderCards(requests);
+                return;
             }
+            const filtered = requests.filter(r => (r.cat || '').toLowerCase().includes(type.toLowerCase()));
+            renderCards(filtered);
         }
 
         window.onload = () => renderCards(requests);
