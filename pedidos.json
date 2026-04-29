@@ -1,0 +1,2085 @@
+
+```html
+<section class="latest-orders-section">
+  <style>
+    .latest-orders-section {
+      font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+      color: #333;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      max-width: 900px;
+      margin: 20px auto;
+    }
+    .latest-orders-section h2 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 25px;
+      font-size: 1.8em;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 10px;
+    }
+    .order-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .order-card {
+      background-color: #ffffff;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 18px 20px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .order-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .order-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .order-header .category {
+      background-color: #e6f7ff;
+      color: #1890ff;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-size: 0.85em;
+      font-weight: 600;
+    }
+    .order-header .priority {
+      background-color: #fff2e8;
+      color: #fa541c;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-size: 0.85em;
+      font-weight: 600;
+    }
+    .order-body h3 {
+      font-size: 1.15em;
+      color: #333;
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+    .order-body p {
+      font-size: 0.9em;
+      color: #555;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+    .order-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-top: auto; /* Pushes footer to the bottom */
+      padding-top: 10px;
+      border-top: 1px dashed #f0f0f0;
+    }
+    .order-footer .price {
+      font-size: 1.1em;
+      font-weight: 700;
+      color: #008000;
+    }
+    .order-footer .date {
+      font-size: 0.8em;
+      color: #777;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .order-grid {
+        grid-template-columns: 1fr;
+      }
+      .latest-orders-section {
+        padding: 15px;
+      }
+      .latest-orders-section h2 {
+        font-size: 1.5em;
+      }
+    }
+    @media (max-width: 480px) {
+      .order-card {
+        padding: 15px;
+      }
+      .order-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+      }
+      .order-header .category,
+      .order-header .priority {
+        font-size: 0.8em;
+        padding: 4px 8px;
+      }
+      .order-body h3 {
+        font-size: 1em;
+      }
+      .order-body p {
+        font-size: 0.85em;
+      }
+      .order-footer .price {
+        font-size: 1em;
+      }
+      .order-footer .date {
+        font-size: 0.75em;
+      }
+    }
+  </style>
+  <h2>Últimos Pedidos Inmobiliarios</h2>
+  <div class="order-grid">
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Lote grande en avenida principal</h3>
+        <p>Busca un lote grande en avenida principal. Presupuesto a analizar.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S A evaluar</span>
+        <span class="date">23/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa a terminar en Valle del Golf</h3>
+        <p>Busca casa a terminar en Valle del Golf.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S A evaluar</span>
+        <span class="date">23/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Dpto de 2d con cochera en Fontanas del Sur</h3>
+        <p>Busca departamento de 2 dormitorios con cochera en Fontanas del Sur.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S A evaluar</span>
+        <span class="date">23/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa 3 dorm, cochera y patio B Sta Isabel</h3>
+        <p>Casa de 3 dormitorios, cochera y patio en Barrio Santa Isabel.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 43.000</span>
+        <span class="date">23/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Alquiler</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa Amoblada - Bº Tejas 4 con seguridad</h3>
+        <p>Casa amoblada en Barrio Tejas 4 con seguridad.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 1.200</span>
+        <span class="date">23/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa 3 dorm Bº Rivadavia Apto Crédito</h3>
+        <p>Casa de 3 dormitorios en Barrio Rivadavia, apta crédito.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 75.000</span>
+        <span class="date">23/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Oportunidad 2 Casas en Anisacate El Descanso</h3>
+        <p>Oportunidad de venta de 2 casas en Anisacate El Descanso.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 73.000</span>
+        <span class="date">23/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Supermercado en Córdoba o pueblo cercano</h3>
+        <p>Cliente busca local para supermercado. Presupuesto 100 mil dólares, aprox 250 m² en Córdoba o pueblo cercano.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 100.000</span>
+        <span class="date">23/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Lote grande camino a Altagracia</h3>
+        <p>Cliente pregunta por lote grande camino a Altagracia.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S A evaluar</span>
+        <span class="date">23/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Depto dos dormitorios Nueva Cba, General Paz</h3>
+        <p>Búsqueda de depto de dos dormitorios en Nueva Córdoba o General Paz, hasta 140000.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 140.000</span>
+        <span class="date">23/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Urgente</span>
+      </div>
+      <div class="order-body">
+        <h3>Galpón de 250 mts para supermercado chino</h3>
+        <p>Cliente busca galpón de 250 m² para supermercado chino. Zona segura, Córdoba o localidades cercanas, presupuesto 100 mil dólares. Que no necesite mucha remodelación y que no haya otro supermercado chino cerca.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 100.000</span>
+        <span class="date">23/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>1 Dormitorio hasta USD 50.000</h3>
+        <p>Búsqueda de 1 dormitorio hasta USD 50.000, en Parque Capital (zona linda) o entre Av. Colón y Ruta 20, de 50 m².</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 50.000</span>
+        <span class="date">23/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>COUNTRY JOCKEY CLUB</h3>
+        <p>Cliente quiere vender en Country Jockey Club, escucha ofertas.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 560.000</span>
+        <span class="date">23/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Lote en Manantiales, más de 300 mtrs</h3>
+        <p>Busca lote en Manantiales de más de 300 mtrs, que no sea esquina. Precio a evaluar.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S A evaluar</span>
+        <span class="date">23/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa en V Escondido 2/3 dorm</h3>
+        <p>Búsqueda de casa en Villa Escondido, 2/3 dormitorios, 1 en suite con vestidor, cochera para 2 autos.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 280.000</span>
+        <span class="date">23/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Departamento 1 o 2 dormitorios, Apto Crédito Nación</h3>
+        <p>Búsqueda de departamento de 1 o 2 dormitorios, o con espacio para escritorio. Puede ser planta baja o con balcón. Apto Crédito Nación (planos y escritura). Zonas: Alto Alberdi, Cofico, Gral. Paz, Alta Córdoba. Cercano al centro.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 65.000</span>
+        <span class="date">23/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Galpones en oportunidad</h3>
+        <p>Busca galpones en oportunidad, puede ser a las afueras de Córdoba Capital. Sin presupuesto.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S Sin definir</span>
+        <span class="date">23/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Terreno en 438 Talleres Oeste 1 cuadra de Av. Alem</h3>
+        <p>Tiene terreno en 438 Talleres Oeste a 1 cuadra de Av. Alem, se puede hacer galpón.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 68.000</span>
+        <span class="date">23/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa a demoler en Cerro Norte</h3>
+        <p>Tiene casa a demoler en Cerro Norte a 2 cuadras de Donato Álvarez, 600 metros, se puede hacer galpón.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 40.000</span>
+        <span class="date">23/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Departamento de categoría en General Paz</h3>
+        <p>Venta de departamento de categoría en General Paz.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 78.000</span>
+        <span class="date">23/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Excepcional Casa en La Melinca</h3>
+        <p>Vende excepcional casa en La Melinca.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 495.000</span>
+        <span class="date">23/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa en San Clemente</h3>
+        <p>Casa en San Clemente, hermosa.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S A evaluar</span>
+        <span class="date">23/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa en Villa Carlos Paz sobre el río</h3>
+        <p>Casa en Villa Carlos Paz sobre el río, hermosa zona.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S A evaluar</span>
+        <span class="date">23/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa Apta Nación. Cochera doble, 3 o más dormit.</h3>
+        <p>Búsqueda Casa Apta Nación. USD 170.000. Cochera doble (2 camionetas), 3 o más dormitorios, lindo patio. Barrios Los Naranjos o esa zona, Alto Alberdi, San Salvador, San Rafael.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 170.000</span>
+        <span class="date">23/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Departamento de 1-2 dormitorios (moderno) Apto crédito</h3>
+        <p>Búsqueda de departamento de 1-2 dormitorios (moderno), apto crédito. Ticket: 58-60k. Alberdi o General Paz.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 60.000</span>
+        <span class="date">23/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Fondo de comercio</h3>
+        <p>Pregunta si alguien trabaja fondos de comercio.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S A evaluar</span>
+        <span class="date">23/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Depto cerca de la plaza España 2 dormitorios o más con cochera</h3>
+        <p>Búsqueda de depto cerca de la plaza España, 2 dormitorios o más con cochera hasta 170 mil usd.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 170.000</span>
+        <span class="date">23/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Campo 78 Hectáreas Villa del Dique</h3>
+        <p>Venta de campo de 78 hectáreas en Villa del Dique, super oportunidad.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 400.000</span>
+        <span class="date">23/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Lote Fact 3 Unidades, Pasaje Privado B° Arguello</h3>
+        <p>Lote con factibilidad para 3 unidades, pasaje privado en Barrio Arguello.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 27.000</span>
+        <span class="date">23/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa 2/3 dormitorios, 2 baños, pileta, 5000mts de terreno</h3>
+        <p>Búsqueda de casa 2/3 dormitorios, 2 baños, pileta, 5000 mts de terreno mínimo y privacidad. Pocos vecinos cerca. Hasta usd 230.000. Zonas: Unquillo, Mendiolaza, Río Ceballos y El Talar de Mendiolaza.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 230.000</span>
+        <span class="date">23/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Lotes en Puerto del Águila</h3>
+        <p>Busca lotes en Puerto del Águila.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S A evaluar</span>
+        <span class="date">23/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Dpto 1 dorm en Terraforte 2 (torres 1 y 2 únicamente). Piso alto.</h3>
+        <p>Búsqueda de depto 1 dorm en Terraforte 2 (torres 1 y 2 únicamente). Piso alto, preferentemente desocupado o pronto a desocuparse (no excluyente).</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S A evaluar</span>
+        <span class="date">23/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa Villa Allende o Saldan 2 dormitorios, patio y cochera</h3>
+        <p>Búsqueda de casa en Villa Allende o Saldan, 2 dormitorios, patio y cochera hasta 70.000 usd.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 70.000</span>
+        <span class="date">23/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Depto apto crédito Nueva Córdoba, Cofico, Alta Córdoba, Gral Paz</h3>
+        <p>Búsqueda de depto apto crédito Nueva Córdoba, Cofico, Alta Córdoba, Gral Paz, hasta 80.000, 1 dormitorio. Crédito Nación.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 80.000</span>
+        <span class="date">23/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Urgente</span>
+      </div>
+      <div class="order-body">
+        <h3>Duplex con algo de seguridad - Ideal Valle Cercano</h3>
+        <p>Comprador con crédito Nación aprobado. USD 76.000. Duplex con algo de seguridad, IDEAL VALLE CERCANO.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 76.000</span>
+        <span class="date">23/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Duplex apto crédito hasta 85.000 UDS?</h3>
+        <p>Busca duplex apto crédito hasta 85.000 UDS.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 85.000</span>
+        <span class="date">23/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Duplex Premium en Brisas Manantiales</h3>
+        <p>Duplex Premium en Brisas Manantiales. Entrega en 3/4 meses. Frente a espacios verdes. 2 dormitorios más escritorio, 3 baños. Entrega USD 68.000 y 12 cuotas de USD 8500.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 68.000 (entrega)</span>
+        <span class="date">23/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Lote Residencial en Pampas de Manantiales</h3>
+        <p>Lote residencial en Pampas de Manantiales. 350 mts. Centrales. Cuentan con dos unidades continuas.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 56.000</span>
+        <span class="date">23/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Duplex en Costas de Manantiales</h3>
+        <p>Búsqueda de duplex en Costas de Manantiales. Ticket: 150k. Dos dormitorios.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 150.000</span>
+        <span class="date">23/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta</span>
+        <span class="priority">Urgente</span>
+      </div>
+      <div class="order-body">
+        <h3>Lote 1053m2 Valle del Sol Mendiolaza</h3>
+        <p>Lote de 1053 m² en Valle del Sol Mendiolaza. Necesita vender urgente por problemas personales.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 22.900</span>
+        <span class="date">24/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Alquiler en Villasol. Depto de 3 dormi. Planta baja</h3>
+        <p>Busca alquiler en Villasol. Departamento de 3 dormitorios, planta baja.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S A evaluar</span>
+        <span class="date">24/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Depto apto crédito Nueva Córdoba, Cofico, Alta Córdoba, Gral Paz</h3>
+        <p>Búsqueda de depto apto crédito Nueva Córdoba, Cofico, Alta Córdoba, Gral Paz, hasta 80.000, 1 dormitorio. Crédito Nación.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 80.000</span>
+        <span class="date">24/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Urgente</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa o dpto 2 dorm Villa Allende, Mendiolaza (con seguridad mejor)</h3>
+        <p>Búsqueda de casa o dpto de 2 dormitorios en Villa Allende, Mendiolaza (si es con seguridad mejor) para mujer sola.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 80.000</span>
+        <span class="date">24/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Alquiler disponible en Falda del Carmen</h3>
+        <p>Busca alquiler disponible en Falda del Carmen.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S A evaluar</span>
+        <span class="date">24/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casas o Departamentos para refaccionar en B Cerrado o bien ubicado</h3>
+        <p>Búsqueda de Casas o Departamentos para refaccionar en barrio cerrado o bien ubicado. Sin presupuesto.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S Sin definir</span>
+        <span class="date">24/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa 2/3 dormitorios para entrar a vivir</h3>
+        <p>Necesita casa 2/3 dormitorios para entrar a vivir. San Vicente, Coronel Olmedo.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 42.000 efvo</span>
+        <span class="date">24/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Dpto 1 dormitorio en Nueva Córdoba</h3>
+        <p>Búsqueda de dpto 1 dormitorio en Nueva Córdoba hasta 65.000 USD. Puede tener renta ya que es para inversión. Solo Nueva Córdoba.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 65.000</span>
+        <span class="date">24/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Urgente</span>
+      </div>
+      <div class="order-body">
+        <h3>Duplex / Housing en Manantiales I, Green Ville II, La Luisita, Mansos del Sur</h3>
+        <p>Búsqueda de duplex / housing en Manantiales I, Green Ville II, La Luisita, Mansos del Sur. 2 dormitorios, cochera, patio. Hasta u$$150000.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 150.000</span>
+        <span class="date">24/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Depto en Cardinales Alto Panorama 1 dormitorio</h3>
+        <p>Búsqueda filtrada, depto en Cardinales Alto Panorama 1 dormitorio hasta 89000. Vista al complejo o Av. Colón.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 89.000</span>
+        <span class="date">24/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa a reciclar</h3>
+        <p>Busca casa a reciclar hasta usd 35.000/40.000.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 40.000</span>
+        <span class="date">24/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Depto en nueva Córdoba de 2 dormitorios, mínimo 80 M2</h3>
+        <p>Búsqueda de depto en Nueva Córdoba de 2 dormitorios, mínimo 80 m² en adelante, balcón. Living comedor amplio. Hasta U$150.000.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 150.000</span>
+        <span class="date">24/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Urgente</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa zona Sur a Reciclar</h3>
+        <p>Búsqueda de casa zona Sur a Reciclar. Presupuesto máximo 50 K.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 50.000</span>
+        <span class="date">24/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Local en alquiler en Nueva Córdoba, apto para gastronomía</h3>
+        <p>Busca local en alquiler en Nueva Córdoba, apto para gastronomía.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S A evaluar</span>
+        <span class="date">24/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa apta crédito Santander Río hasta usd 90.000</h3>
+        <p>Busca casa apta crédito Santander Río hasta usd 90.000. Zona Sur.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 90.000</span>
+        <span class="date">24/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Cliente para dos locales en Docta</h3>
+        <p>Busca cliente para dos locales en Docta.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S A evaluar</span>
+        <span class="date">24/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Departamento o duplex de hasta U$S 100.000 con alquiler de $ 1.000.000</h3>
+        <p>Búsqueda filtrada. Necesita departamento o duplex de hasta U$S 100.000 con alquiler de $ 1.000.000 y que tome de parte de pago una Amarok highline 2020 4x2 y resto con efectivo.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 100.000</span>
+        <span class="date">24/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Depto Gral Paz 1 dormitorio</h3>
+        <p>Búsqueda de departamento en General Paz, 1 dormitorio.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 70.000</span>
+        <span class="date">24/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa 2 o 3 dormi, 1 cochera, hasta usd 70.000 (puede estar a mejorar)</h3>
+        <p>Busca casa 2 o 3 dormitorios, 1 cochera, hasta usd 70.000 (puede estar a mejorar), barrio lindo, buena ubicación. Apto Crédito Nación.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 70.000</span>
+        <span class="date">24/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa en barrio Don Bosco, ideal 3 habitaciones, puede ser dos, cochera</h3>
+        <p>Búsqueda de casa en barrio Don Bosco, ideal 3 habitaciones, puede ser dos, cochera. Presupuesto a analizar.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S A evaluar</span>
+        <span class="date">24/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Urgente</span>
+      </div>
+      <div class="order-body">
+        <h3>Departamento de 1 dormitorio en: Alberdi | Alto Alberdi | Cofico | Alta Córdoba</h3>
+        <p>Búsqueda activa / urgente. Busca departamento de 1 dormitorio en: Alberdi | Alto Alberdi | Cofico | Alta Córdoba. Requisitos: Balcón, con escritura o próximo a escriturar, desocupado. Hasta USD 56.000.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 56.000</span>
+        <span class="date">24/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Lote en venta | Potrero de Garay</h3>
+        <p>Lote en venta en Potrero de Garay.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 17.000</span>
+        <span class="date">24/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Departamento 2 dormitorios en Nueva Cordoba</h3>
+        <p>Venta de departamento de 2 dormitorios en Nueva Córdoba.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 86.000</span>
+        <span class="date">24/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Inmobiliaria en Rio Tercero para derivar un alquiler</h3>
+        <p>Busca contacto de inmobiliaria en Río Tercero para derivar un alquiler.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S A evaluar</span>
+        <span class="date">24/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Depto Nueva Córdoba 2 dormitorios apto credito</h3>
+        <p>Búsqueda de depto en Nueva Córdoba, 2 dormitorios apto crédito hasta 135000 usd.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 135.000</span>
+        <span class="date">24/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Duplex 3 dormitorios Housing Arguello</h3>
+        <p>Venta de duplex 3 dormitorios Housing Arguello.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 150.000</span>
+        <span class="date">24/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa 2 dormitorios Barrio Escobar Córdoba</h3>
+        <p>Venta de casa 2 dormitorios Barrio Escobar Córdoba.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 110.000</span>
+        <span class="date">24/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Departamento 1 dorm con balcón Nueva Córdoba</h3>
+        <p>Departamento 1 dormitorio con balcón en Nueva Córdoba. 40m². Remodelado.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 79.000</span>
+        <span class="date">24/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Depto 1 dorm Nva Cordoba Exc ubicacion</h3>
+        <p>Vende depto 1 dorm Nueva Córdoba excelente ubicación.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 69.300</span>
+        <span class="date">24/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>2 dormitorios, cochera algo de patio</h3>
+        <p>Búsqueda hasta 75000USD (en caso de tamaño se analiza estirar un poco el presupuesto). Mínimo 2 dormitorios, cochera algo de patio (que no sea ultra chico). Zonas: Maipu, Gral Paz, Junior, Cofico.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 75.000</span>
+        <span class="date">24/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Depto en Alberdi hasta 50.000 cash. Cerca nuevocentro ideal.</h3>
+        <p>Colega busca depto en Alberdi hasta 50.000 cash. Cerca nuevocentro ideal.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 50.000</span>
+        <span class="date">24/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Apto Crédito hasta 80K Casa menos de 20 años antig. 2 o + Dorm</h3>
+        <p>Búsqueda apto crédito hasta 80K casa menos de 20 años antigüedad. 2 o más dormitorios.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 80.000</span>
+        <span class="date">24/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Housing en zona norte, o casas que tengan garitas cerca</h3>
+        <p>Busca housing en zona norte, o casas que tengan garitas cerca. Hasta 190 mil usd.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 190.000</span>
+        <span class="date">24/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa (no duplex) en barrios: Alto Palermo, Tablada Park, Alejandro Centeno, Lugones, Cerro, Urca, Bajo Palermo, Chateau</h3>
+        <p>Búsqueda súper filtrada: Casa (no duplex) en barrios: zona de Alto Palermo, Tablada Park, Alejandro Centeno, Lugones, Cerro, Urca, Bajo Palermo, Chateau. 3 dormitorios, escritorio, cocina comedor, living, patio con pileta o lugar para hacerla. 2 baños mínimo. Cochera para al menos 1 auto. Presupuesto hasta USD 150000 según estado de la propiedad se negocia monto.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 150.000</span>
+        <span class="date">24/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa 5 dormitorios Talar de Mendiolaza</h3>
+        <p>Venta casa 5 dormitorios Talar de Mendiolaza. Apta crédito.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 150.000</span>
+        <span class="date">24/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa 3 dormitorios Argüello</h3>
+        <p>Venta casa 3 dormitorios Argüello. Apta crédito.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 80.000</span>
+        <span class="date">24/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa a refaccionar parque capital o alrededores</h3>
+        <p>Búsqueda casa a refaccionar parque capital o alrededores. Colinas también puede entrar y Patruque Vélez.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S A evaluar</span>
+        <span class="date">25/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Depto hasta 50.000 cerca de la facultad de derecho en el centro</h3>
+        <p>Búsqueda de depto hasta 50.000 cerca de la facultad de derecho en el centro.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 50.000</span>
+        <span class="date">25/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Alquiler económico en zona norte con 2 dorm. (puede ser Arguello)</h3>
+        <p>Busca alquiler económico en zona norte con 2 dormitorios. Puede ser Arguello también.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S A evaluar</span>
+        <span class="date">25/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Duplex. Departamento de 2 dormitorios, cochera, patio (zona verde)</h3>
+        <p>Búsqueda de duplex o departamento de 2 dormitorios, cochera, patio (zona verde en caso del departamento). Hasta u$$ 150000. Zona Recta Martinolli, Villa Walcalde, Rivera Indarte, La Cuesta, Intercountry Zona Calera.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 150.000</span>
+        <span class="date">25/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Urgente</span>
+      </div>
+      <div class="order-body">
+        <h3>Dpto de 2 o 3 dormitorios y cochera en complejo Torres de Solares (sol de mayo 420)</h3>
+        <p>Busca dpto de 2 o 3 dormitorios y cochera en complejo Torres de Solares (sol de mayo 420) para ver hoy 16.30hs. Hasta 150.000 cash.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 150.000</span>
+        <span class="date">25/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Depto .PH. Frente o cerca del lago céntrico 1 o 2 dormitorios Villa C.Paz</h3>
+        <p>Búsqueda 1. Depto, PH, frente o cerca del lago céntrico 1 o 2 dormitorios Villa C. Paz. Presupuesto.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 65.000</span>
+        <span class="date">25/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Departamento bueno barato bonito</h3>
+        <p>Búsqueda 2: Departamento bueno barato bonito. Zona céntrica Alberdi Alto Alberdi. 1 dormitorio.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 30.000</span>
+        <span class="date">25/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Duplex/ casa en Punilla o Río Ceballos que reciba un depto en Río IV y diferencia en efectivo</h3>
+        <p>Búsqueda 3: Duplex/ casa en Punilla o Río Ceballos que reciba un depto en Río IV y diferencia en efectivo. Presupuesto USD 65.000/70.000 (Valor depto del cliente $ 45.000 aprox. Muy buena ubicación).</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 70.000</span>
+        <span class="date">25/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Dpto Nva Cba buena zona piso bajo con balcón 1 o 2 dorm hasta 80 mil apto crédito Banco Nacion</h3>
+        <p>Búsqueda de Dpto Nueva Córdoba buena zona, piso bajo con balcón, 1 o 2 dormitorios, hasta 80 mil apto crédito Banco Nación.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 80.000</span>
+        <span class="date">25/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa en Valle de Anisacate 142m2 Cubiertos</h3>
+        <p>Venta casa en Valle de Anisacate 142m2 cubiertos.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 89.500</span>
+        <span class="date">25/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa 65 m2 en Lote de 2405 m2 Apta Crédito</h3>
+        <p>Venta de casa 65 m2 en lote de 2405 m2 apta crédito.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 45.000</span>
+        <span class="date">25/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Depto en Alberdi. Presup hasta u$a 50.000. Es para rentar. Poca antigüedad.</h3>
+        <p>Búsqueda! Depto en Alberdi. Presupuesto hasta u$a 50.000. Es para rentar. Poca antigüedad.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 50.000</span>
+        <span class="date">26/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Alquiler</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Alquiler: Villa Cabrera, Escobar, Bajo Palermo, Alto Verde</h3>
+        <p>Búsqueda alquiler: Villa Cabrera, Escobar, Bajo Palermo, Alto Verde. Presupuesto: 2M. 3 dormitorios, 2 cocheras, mínimo 2 baños (si tiene 3 mejor). Se puede agregar Urca si hay suerte de encontrar algo en ese rango.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S A evaluar</span>
+        <span class="date">26/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa en Country Potrerillo de Larreta 530 m2</h3>
+        <p>Vende casa en Country Potrerillo de Larreta 530 m2.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 420.000</span>
+        <span class="date">26/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta / Alquiler</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Local Comercial Centro 80 m2 amoblado baño propio</h3>
+        <p>Local comercial centro 80 m2 amoblado baño propio. En alquiler y en venta.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 900.000 (Venta)</span>
+        <span class="date">26/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa 2 dormitorios, en barrio Maipu o Colon hasta 55000 apto credito nacion</h3>
+        <p>Busca casa 2 dormitorios, en barrio Maipu o Colon hasta 55000 apto credito nacion.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 55.000</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Complejo Cabañas Local Comercial Parque Síquiman</h3>
+        <p>Complejo Cabañas Local Comercial Parque Síquiman.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 499.900</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Complejo de Departamentos La Calera</h3>
+        <p>Venta complejo de departamentos La Calera.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 199.900</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa 3 dormitorios Barrio 20 de Junio</h3>
+        <p>Venta casa 3 dormitorios Barrio 20 de Junio.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 64.900</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa 2 dorm. Valle Escondido - Apta Crédito</h3>
+        <p>Venta casa 2 dormitorios. Valle Escondido - apta crédito.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 294.900</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa 1 dormitorio. B° General Pueyrredon.</h3>
+        <p>Venta casa 1 dormitorio. Barrio General Pueyrredon.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 29.900</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa 4 dorm San Martin</h3>
+        <p>Venta casa 4 dormitorios San Martin.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 144.900</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Local en alquiler sobre avenida para concesionaria</h3>
+        <p>Búsqueda. Algún local en alquiler sobre avenida para concesionaria. Al privado.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S A evaluar</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Depto 1 dormit con ascensor (No PB)</h3>
+        <p>Búsqueda de depto 1 dormit con ascensor. No PB, zona centro Ayacucho Tribunales San Juan Municip. Ticket 45000, puede extenderse un poco más.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 45.000</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Propiedad para invertir que tenga renta igual o superior al 10% anual en usd</h3>
+        <p>Busca propiedad para invertir que tenga renta igual o superior al 10% anual en usd. Preferentemente locales comerciales. Hasta 130/140K. Zona: indistinta.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 140.000</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Duplex Zona Sur! Apto Crédito 2 dormitorios</h3>
+        <p>Búsqueda duplex zona Sur! Apto crédito 2 dormitorios. Hasta USD 90.000. Valle Cercano, etc.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 90.000</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa en venta con galpon - Villa Cabrera</h3>
+        <p>Casa en venta con galpon - Villa Cabrera.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 118.500</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Departamento para comprar en Ópera Park de 2 dormitorios</h3>
+        <p>Búsqueda departamento para comprar en Ópera Park de 2 dormitorios.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S A evaluar</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa o duplex en zona norte: Mínimo 2 dormitorios,2 baños, patio. Cochera para al menos 1 auto</h3>
+        <p>Búsqueda activa: Casa o duplex en zona norte: Mínimo 2 dormitorios, 2 baños, patio. Cochera para al menos 1 auto. Presupuesto hasta USD 150000 según estado de la propiedad se negocia monto.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 150.000</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Oportunidad Dpto 1 dormitorio Nueva Córdoba</h3>
+        <p>Búsqueda oportunidad Dpto 1 dormitorio Nueva Córdoba. Hasta USD 45.000.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 45.000</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Depto para inversión hasta 55.000 usd con escritura, en buen estado y con menos de 20 años</h3>
+        <p>Busca depto para inversión hasta 55.000 usd con escritura, en buen estado y con menos de 20 años. Cofico, Alta Cba, Gral Paz, Alberdi.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 55.000</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa en Valle Escondido</h3>
+        <p>Búsqueda! Casa en Valle Escondido hasta 350.000 efectivo! Solo esa zona!</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 350.000</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Lote en Manantiales II que cierre en 30k? Para inversión</h3>
+        <p>Algún lote en Manantiales II que cierre en 30k? Para inversión...</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 30.000</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Oportunidad lote Manantiales apto duplex 300mtr (no esquina)</h3>
+        <p>Búsqueda de oportunidad lote Manantiales apto duplex 300mtr (no esquina). Cierre en 40usd.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 40.000</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Dpto hasta 40mil apto credito por 27 de abril, colon, canada 1 habitacion</h3>
+        <p>Busca depto hasta 40mil apto credito por 27 de abril, colon, canada 1 habitacion.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 40.000</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Lote en venta en Etapa 2 de Veneto Country</h3>
+        <p>Próximo en la red! Lote en venta en Etapa 2 de Veneto Country. 360 m², a solo 36 mil dólares. Ubicación estratégica, a 15 min de Córdoba, en un entorno natural, con seguridad y gran proyección. Entrega: diciembre 2026.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 36.000</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa 2 dormitorios hasta USD 39.000 con cochera apto IAF</h3>
+        <p>Búsqueda de casa 2 dormitorios hasta USD 39.000 con cochera apto IAF.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 39.000</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa + espacio para varios autos, puede ser con galpón</h3>
+        <p>Busca propiedad: Casa + espacio para varios autos, puede ser con galpón, presupuesto hasta 70mil usd.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 70.000</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Alquiler Local comercial de 170 mts a 200 (bicicletería)</h3>
+        <p>Búsqueda para alquiler. Zona norte Gauss Rafael Núñez zona Premium. Local comercial de 170 mts a 200. Negocio bicicletería.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S A evaluar</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Duplex en San Ignacio Village</h3>
+        <p>Busca duplex en San Ignacio Village.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S A evaluar</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Propiedad en Cordoba Depto 2 dorm y cochera que reciba casa en Villa del Dique</h3>
+        <p>Búsqueda: propiedad en Cordoba Depto 2 dorm y cochera que reciba casa en Villa del Dique. Estratégicamente ubicada zona comercial.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S A evaluar</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa 2 dor/ zona golf villa allende hasta 150 mil</h3>
+        <p>Busca casa 2 dormitorios/ zona golf villa allende hasta 150 mil.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 150.000</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Urgente</span>
+      </div>
+      <div class="order-body">
+        <h3>Alquiler 2 dor con seguridad y cochera zona norte</h3>
+        <p>Búsqueda urgente alquiler 2 dor con seguridad y cochera zona norte.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S A evaluar</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Oportunidad en Nueva Cordoba/Guemes 1 Dorm</h3>
+        <p>Búsqueda oportunidad en Nueva Cordoba/Guemes 1 dormitorio alrededor de 45.000.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 45.000</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casas en obra o que no estén terminadas</h3>
+        <p>Busca casas en obra o que no estén terminadas.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S A evaluar</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa a terminar-apto desarrollo Alta Córdoba</h3>
+        <p>Venta casa a terminar-apto desarrollo Alta Córdoba. Escucha oferta de contado.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 85.000</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Lote en venta |Villa Juana| Bº Cerrado|Alta Gracia</h3>
+        <p>Nuevo en la red. Lote en venta |Villa Juana| Bº Cerrado|Alta Gracia.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 24.900</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Alquiler en Ducasse, Providencia, San Martin, Cofico, o por la zona. 1 dormitorio.</h3>
+        <p>Busca alquiler en Ducasse, Providencia, San Martin, Cofico, o por la zona. Algo con patio casa o depto si es depto con poca expensas. El alquiler 550 aprox. 1 dormitorio. Paso cliente.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 550 (alquiler)</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Lotes para el desarrollo de proyectos de energía renovable</h3>
+        <p>Búsqueda activa de lotes para el desarrollo de proyectos de energía renovable. En la provincia de Córdoba: Arroyo Cabral, Almafuerte, Villa María (sector Las Playas). En Santiago del Estero: Fernández. Terrenos con una superficie aproximada de entre 3 y 10 hectáreas. Cercanía a estaciones transformadoras.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S A evaluar</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa en La Calera o Bialet por crédito IAF. Hasta 50mil.</h3>
+        <p>Búsqueda: casa en La Calera o Bialet por crédito IAF. Hasta 50mil.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 50.000</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Urgente</span>
+      </div>
+      <div class="order-body">
+        <h3>Dpto dos dormitorios - 2 baños si o si! Nueva cordoba</h3>
+        <p>Búsqueda urgente. Dpto dos dormitorios - 2 baños si o si! Nueva Córdoba, en lo posible un piso no tan alto y vista frente, hasta 120.000 USD.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 120.000</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Urgente</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa en Villa Cabrera o alrededores (Zona Norte) 3 habitaciones - patio - cochera doble - buen estado</h3>
+        <p>Búsqueda urgente. Casa en Villa Cabrera o alrededores (Zona Norte) 3 habitaciones - patio - cochera doble - buen estado de conservación - apta crédito paga mitad o más en efectivo y el resto en crédito hasta 120.000 USD.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 120.000</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Duplex o casa! En zona norte,E53,Unquillo,La Calera,Villa Allende, etc</h3>
+        <p>Búsqueda duplex o casa! En zona norte, E53, Unquillo, La Calera, Villa Allende, etc. Que reciba en parte de pago departamento de pago departamento de USD 53.000 + 20.000.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 73.000</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa 4 dormitorios Alta Córdoba. Financia!</h3>
+        <p>Venta casa 4 dormitorios Alta Córdoba. Financia!</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 137.000</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa apto credito nacion. Zona norte (bajo palermo, villa cabrera, las rosas, alto verde, etc.)</h3>
+        <p>Búsqueda: Casa apto credito nacion. Zona norte (bajo palermo, villa cabrera, las rosas, alto verde, etc.) Presupuesto aproximado: uss 100.000.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 100.000</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Urgente</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa 2/3 dormitorios, patio, cochera, pileta (no excluyente)</h3>
+        <p>Búsqueda activa. Casa 2/3 dormitorios, patio, cochera, pileta (no excluyente). Zona norte (cerro, urca, Arguello, Villa Belgrano, Bajo Palermo, Escobar etc). Hasta 150 efectivo, se podría estirar si le gusta mucho la propiedad!</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 150.000</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>En Villasol, depto de 1 dormitorio</h3>
+        <p>Búsqueda: en Villasol, depto de 1 dormitorio.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 70.000</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Duplex Planta Baja Colinas de Manantiales</h3>
+        <p>Venta duplex planta baja Colinas de Manantiales.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 129.000</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa zona sur (de Alberdi al sur) 2/ 3 dormitorios, buena zona</h3>
+        <p>Búsqueda casa zona sur (de Alberdi al sur) 2/ 3 dormitorios, buena zona. Presupuesto U$S 100.000. Apta BNA.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 100.000</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Departamento 3 dormitorios Centro Cañada</h3>
+        <p>Venta departamento 3 dormitorios Centro Cañada.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 130.000</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Venta</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa 4 dormitorios y pileta B San Salvador</h3>
+        <p>Venta casa 4 dormitorios y pileta B San Salvador.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 180.000</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Lotes en etapa 3 y 4 de Docta apto duplex</h3>
+        <p>Necesita lotes en etapa 3 y 4 de Docta apto duplex, hasta 62000 dolares.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 62.000</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Normal</span>
+      </div>
+      <div class="order-body">
+        <h3>Propiedad hasta 200 mil dólares con escritura y planos que sea en barrio cerrado o con seguridad</h3>
+        <p>Alguna propiedad hasta 200 mil dólares con escritura y planos que sea en barrio cerrado o con seguridad? Cercana a circunvalación.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S 200.000</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="category">Búsqueda</span>
+        <span class="priority">Urgente</span>
+      </div>
+      <div class="order-body">
+        <h3>Casa a refaccionar - Barrios: Villa Belgrano, Arguello, Urca, Granja de Funes, Cerro, Villa Cabrera, Poeta Lugones, Tablada Park</h3>
+        <p>Búsqueda para inversores zona norte. Casa a refaccionar. Barrios: Villa Belgrano, Arguello parte linda, Urca, Granja de Funes, Cerro, Villa Cabrera cerca del shopping zona linda, Poeta Lugones, Tablada Park. Ticket no definido, pero a precio inversor.</p>
+      </div>
+      <div class="order-footer">
+        <span class="price">U$S Sin definir</span>
+        <span class="date">27/04/2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+```
